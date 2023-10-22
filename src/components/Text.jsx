@@ -1,14 +1,14 @@
 import {useState} from 'react'
 
 function Text() {
-
-  const handelUpClicked = () => {
-    let newText = text.toUpperCase;
-    setText(newText)
-  }
-
+  
   const handelOnChange = (e) => {
     setText(e.target.value)
+  }
+
+  const handelUpClicked = () => {
+    let newText = text.toUpperCase();
+    setText(newText)
   }
 
   const [text, setText] = useState("Enter The Text")
@@ -40,3 +40,6 @@ function Text() {
 }
 
 export default Text
+
+
+
