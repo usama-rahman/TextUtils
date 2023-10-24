@@ -1,8 +1,8 @@
 import './App.css'
 import Home from './components/Home/Home';
-import About from './components/About';
+import About from './components/About/About';
 import Navbar from './components/Home/Navbar';
-import Contact from './components/Contact';
+import Contact from './components/Contact/Contact';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
@@ -13,16 +13,15 @@ export default function App() {
           <Routes>
 
             <Route path="/" element={<Navbar />}>
-              {/* <Route index element={<Home />} /> */}
+
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
               <Route path="contact" element={<Contact />} />
 
-              {/* <Route path='' element={<Text />} /> */}
-
             </Route>
 
           </Routes>
+
     </BrowserRouter>
   )
 }
