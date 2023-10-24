@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import {useState} from 'react'
 
-function Text() {
+function Text(props) {
   
   const handelOnChange = (e) => {
     setText(e.target.value)
@@ -23,15 +24,20 @@ function Text() {
 
   return (
     <>
-      <div className="mt-8">
-        <label htmlFor="message" className="block mb-3 pt-3 text-lg font-medium text-gray-600 text-center">Your message</label>
+      <div className="mt-8 w-full">
+
+        <div className=''>
+          <label htmlFor="message" className={`block mb-3 pt-3 text-lg font-medium text-zinc-900 text-${props.mode === 'gray-100' ?'slate-600' : 'gray-100'} text-center`}>Your message</label>
+          {/* Toggle Button */}
+         
+        </div>
 
         <textarea 
             value={text}
             id="message" 
             rows="8" 
-            className="block p-3 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600
-            dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+            className={`block p-3 w-full text-md text-white rounded-lg bg-${props.mode === 'gray-100' ?'slate-600' : 'gray-800'}
+            dark:placeholder-gray-400`}
             placeholder="Write your thoughts here..."
             onChange={handelOnChange}
         >
@@ -54,12 +60,12 @@ function Text() {
 
 
 
-        <div className='text-gray-600'>
+        <div className={`text-${props.mode === 'gray-100' ?'slate-600' : 'gray-100'}`}>
           <h2 className='text-lg font-medium'>Your Text summary</h2>
           <p>{wordCount} words and {text.length} caracters</p>
           <p>{Math.floor(0.0042 * wordCount)} Minutes to read</p>
-          <h2 className='text-lg font-medium'>Preview</h2>
-          <p className='bg-gray-200 px-4 py-3 rounded-md'>{text}</p>
+          <h2 className='text-lg font-medium '>Preview</h2>
+          <p className='px-4 py-3 rounded-md'>{text}</p>
         </div>
        
       </div>
