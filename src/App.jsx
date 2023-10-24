@@ -4,6 +4,7 @@ import About from './components/About/About';
 import Navbar from './components/Home/Navbar';
 import Contact from './components/Contact/Contact';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Blog from './components/Blog/Blog';
 
 export default function App() {
 
@@ -17,6 +18,8 @@ export default function App() {
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
               <Route path="contact" element={<Contact />} />
+              <Route path="blog" element={<Blog />} />
+
 
             </Route>
 
