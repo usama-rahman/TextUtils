@@ -1,31 +1,29 @@
-import { useState } from 'react'
 import './App.css'
-import Navbar from './components/Navbar'
-import Text from './components/Text'
+import Home from './components/Home/Home';
+import About from './components/About';
+import Navbar from './components/Home/Navbar';
+import Contact from './components/Contact';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
-function App() {
-
-  const [mode, setMode] = useState('gray-100')
-
-  const toggleMode = () => {
-    if (mode === "gray-100") { 
-      setMode('slate-600');
-      document.body.style.backgroundColor = "#18181b"
-    }else{
-      setMode('gray-100');
-      document.body.style.backgroundColor = "#cbd5e1"
-    }
-  }
-
-  
+export default function App() {
 
   return (
-    <div className={`bg-${mode} p-8 max-w-7xl w-full h-screen`}  >
-      <Navbar toggleMode = {toggleMode} />
-      <Text mode={mode} />
-    </div>
+    <BrowserRouter>
+   
+          <Routes>
+
+            <Route path="/" element={<Navbar />}>
+              {/* <Route index element={<Home />} /> */}
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="contact" element={<Contact />} />
+
+              {/* <Route path='' element={<Text />} /> */}
+
+            </Route>
+
+          </Routes>
+    </BrowserRouter>
   )
 }
 
-export default App

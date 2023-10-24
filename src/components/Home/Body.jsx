@@ -1,8 +1,9 @@
-
+/* eslint-disable react/prop-types */
 import {useState} from 'react'
 
 function Text(props) {
-  
+
+ 
   const handelOnChange = (e) => {
     setText(e.target.value)
   }
@@ -27,7 +28,7 @@ function Text(props) {
   let wordCount = text.split(' ').length
 
   return (
-    <>
+    <div className={`bg-${props.mode}`}>
       <div className="mt-8 w-full">
         <div className=''>
           {/*  eslint-disable-next-line react/prop-types */}
@@ -74,10 +75,11 @@ function Text(props) {
         </div>
        
       </div>
-    </>
+    </div>
   )
 }
 
 export default Text
+
 
 
