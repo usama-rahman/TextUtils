@@ -16,8 +16,8 @@ export default function Home() {
       }
     }
   return (
-    <div>
-        <div className={`bg-${mode} w- `}  >
+    <div className='flex w-full h-screen'>
+        <div className={`bg-${mode} w-4/5 justify-center `}  >
         <Navbar toggleMode = {toggleMode} />
         <Body mode={mode} />
         </div>
