@@ -34,7 +34,7 @@ function Text(props) {
 
   return (
     <div className={`bg-${props.mode}`}>
-      <div className="mt-8 w-full">
+      <div className="w-full">
         <div className=''>
           {/*  eslint-disable-next-line react/prop-types */}
           <label htmlFor="message" className={`block mb-3 pt-3 text-lg font-medium text-${props.mode === 'gray-100' ?'slate-600' : 'gray-100'} text-center`}>Your message</label>        
@@ -73,7 +73,7 @@ function Text(props) {
         {/*  eslint-disable-next-line react/prop-types */}
         <div className={`text-${props.mode === 'gray-100' ?'slate-600' : 'gray-100'}`}>
           <h2 className='text-lg font-medium'>Your Text summary</h2>
-          <p>{text.split(' ').filter((element) => {return element.length!=0}).length} words and {text.length} caracters</p>
+          <p>{text.split(' ').filter((element) => {return element.length!==0}).length} words and {text.length} caracters</p>
           <p>{Math.floor(0.0042 * wordCount)} Minutes to read</p>
           <h2 className='text-lg font-medium '>Preview</h2>
           <p className='px-4 py-3 rounded-md'>{text.length>0 ? text: "Enter Text to Preview"}</p>
