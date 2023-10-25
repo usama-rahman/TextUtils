@@ -11,6 +11,7 @@ function Text(props) {
   const handelUpClicked = () => {
     let newText = text.toUpperCase();
     setText(newText)
+    props.showAlert("Text converted to uppercase")
   }
   
   const handelLoClicked = () => {

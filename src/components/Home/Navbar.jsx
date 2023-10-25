@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
-// import React from 'react'
 import { Outlet, Link } from "react-router-dom";
-// import { useState } from "react";
 
 function Navbar(props) {
 
@@ -10,7 +8,7 @@ function Navbar(props) {
     
       <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link href="" className="flex items-center">
+        <Link to="/" className="flex items-center">
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Usama</span>
         </Link>
         <div className="flex md:order-2">
