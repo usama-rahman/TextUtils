@@ -11,16 +11,20 @@ function Text(props) {
   const handelUpClicked = () => {
     let newText = text.toUpperCase();
     setText(newText)
-    props.showAlert("Text converted to uppercase")
+    props.showAlert("Text converted to Uppercase")
   }
   
   const handelLoClicked = () => {
     let newText = text.toLowerCase();
     setText(newText)
+    props.showAlert("Text converted to Lowercase")
+
   }
 
   const handelClear = () => {
     setText('');
+    props.showAlert("Text cleared")
+
   }
 
   const [text, setText] = useState("")

@@ -15,7 +15,7 @@ export default function Home() {
       })
       setTimeout( () => {
         setAlert(null)
-      },1000)
+      },3000)
     }
 
     const toggleMode = () => {
@@ -34,7 +34,7 @@ export default function Home() {
         <div className={`bg-${mode} w-4/5  `}  >
         <Navbar toggleMode = {toggleMode} />
         <Alert alert={alert} />
-        <Body mode={mode} />
+        <Body mode={mode} showAlert={showAlert} />
         </div>
     </div>
   )
