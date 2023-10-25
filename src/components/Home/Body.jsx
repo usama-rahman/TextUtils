@@ -73,7 +73,7 @@ function Text(props) {
         {/*  eslint-disable-next-line react/prop-types */}
         <div className={`text-${props.mode === 'gray-100' ?'slate-600' : 'gray-100'}`}>
           <h2 className='text-lg font-medium'>Your Text summary</h2>
-          <p>{wordCount} words and {text.length} caracters</p>
+          <p>{text.split(' ').filter((element) => {return element.length!=0}).length} words and {text.length} caracters</p>
           <p>{Math.floor(0.0042 * wordCount)} Minutes to read</p>
           <h2 className='text-lg font-medium '>Preview</h2>
           <p className='px-4 py-3 rounded-md'>{text.length>0 ? text: "Enter Text to Preview"}</p>
